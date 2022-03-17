@@ -23,7 +23,12 @@ namespace SignUpGenius.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult ViewApp()
+        {
+            return View();
+        }
+
+        public IActionResult SignUp()
         {
             return View();
         }
