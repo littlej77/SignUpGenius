@@ -28,6 +28,11 @@ namespace SignUpGenius.Controllers
             return View();
         }
 
+        public IActionResult SelectTime()
+        {
+            return View();
+        }
+
         public IActionResult SignUp()
         {
             return View();
