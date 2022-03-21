@@ -2,14 +2,29 @@
 @{
     ViewData["Title"] = "Sign Up";
 }
+@model SignUpGenius.Models.FormResponse
 
+<h1> Sign your group up for a tour of the Layton, Utah Temple</h1>
 
-<header>
-    <h1>Sign up for a tour of the Layton, Utah Temple</h1>
-</header>
+<div>
+    <form method="post">
+        <label asp-for="GroupName">Group Name:</label>
+        <input asp-for="GroupName" />
+        <br />
 
-<html>
-<body>
-    <p>Sign up page</p>
-</body>
-</html>
+        <label asp-for="GroupSize">Group Size:</label>
+        <input asp-for="GroupSize" />
+        <br />
+
+        <label asp-for="Email">Email:</label>
+        <input asp-for="Email"/>
+        <br />
+
+        <label asp-for="Phone">Phone Number:</label>
+        <input asp-for="Phone" />
+        <br />
+
+        <button type="submit">Submit Appointment</button>
+    </form>
+
+</div>

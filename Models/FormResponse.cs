@@ -11,10 +11,10 @@ namespace SignUpGenius.Models
         //here we need to have the time info, its part of the form but its not editable 
         //routed to a form that has the date info set --> we need to make the time come into this? 
 
-
-        [Key]
-        [Required]
-        public int TourId { get; set; }
+        //not sure if we need this?
+        //[Key]
+        //[Required]
+        //public int TourId { get; set; }
         [Required]
         public string GroupName {get; set;}
         [Required]

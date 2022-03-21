@@ -33,9 +33,18 @@ namespace SignUpGenius.Controllers
             return View();
         }
 
+        //i think here is where we will pass in the time.. SignUP(date, time)
+        [HttpGet]
         public IActionResult SignUp()
         {
+
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult SignUp(FormResponse fr)
+        {
+            return View("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
