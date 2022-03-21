@@ -11,11 +11,11 @@ namespace SignUpGenius.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private ISignUpGeniusRepository repo;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ISignUpGeniusRepository temp)
         {
-            _logger = logger;
+            repo = temp;
         }
 
         public IActionResult Index()
