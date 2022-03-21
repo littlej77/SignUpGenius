@@ -15,15 +15,23 @@ namespace SignUpGenius.Models
         [Key]
         [Required]
         public int TourId { get; set; }
+<<<<<<< Updated upstream
      
+=======
+
+>>>>>>> Stashed changes
         [Required]
         public string GroupName {get; set;}
+
         [Required]
         public int GroupSize { get; set; }
+
         [Required]
         public string Email { get; set; }
+
         public string Phone { get; set; }
 
-
+        [DataType(DataType.DateTime)]
+        public DateTime TourDate { get; set; }
     }
 }
