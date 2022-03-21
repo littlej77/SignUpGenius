@@ -15,11 +15,7 @@ namespace SignUpGenius.Models
         [Key]
         [Required]
         public int TourId { get; set; }
-<<<<<<< Updated upstream
-     
-=======
 
->>>>>>> Stashed changes
         [Required]
         public string GroupName {get; set;}
 
