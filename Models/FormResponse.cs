@@ -12,9 +12,10 @@ namespace SignUpGenius.Models
         //routed to a form that has the date info set --> we need to make the time come into this? 
 
         //not sure if we need this?
-        //[Key]
-        //[Required]
-        //public int TourId { get; set; }
+        [Key]
+        [Required]
+        public int TourId { get; set; }
+     
         [Required]
         public string GroupName {get; set;}
         [Required]
