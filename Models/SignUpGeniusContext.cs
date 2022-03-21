@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,10 +12,11 @@ namespace SignUpGenius.Models
         {
         }
 
-        public SignUpGeniusContext(DbContextOptions<SignUpGeniusContext> options)
-            : base(options)
+        public SignUpGeniusContext(DbContextOptions<SignUpGeniusContext> options): base(options)
         {
         }
+
+        public DbSet<FormResponse> FormResponses { get; set; }
 
 
     }
