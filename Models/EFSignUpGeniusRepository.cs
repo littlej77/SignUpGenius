@@ -7,7 +7,14 @@ namespace SignUpGenius.Models
 {
     public class EFSignUpGeniusRepository : ISignUpGeniusRepository
     {
+        
         private SignUpGeniusContext context { get; set; }
-        public IQueryable<FormResponse> FormResponses => context
+        public EFSignUpGeniusRepository (SignUpGenius temp)
+        {
+            context = temp;
+        }
+
+
+        public IQueryable<FormResponse> FormResponses => context.FormResponses;
     }
 }
