@@ -18,12 +18,16 @@ namespace SignUpGenius.Models
      
         [Required]
         public string GroupName {get; set;}
+
         [Required]
+        [Range(1, 15, ErrorMessage = "Groups can be no larger than 15 people")]
         public int GroupSize { get; set; }
+
         [Required]
         public string Email { get; set; }
+
         public string Phone { get; set; }
 
-
+        public DateTime TourDate { get; set; }
     }
 }

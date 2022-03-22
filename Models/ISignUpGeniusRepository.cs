@@ -9,6 +9,10 @@ namespace SignUpGenius.Models
     {
         IQueryable<FormResponse> FormResponses { get; }
 
+        public void SaveResponse(FormResponse fr);
+
+        public void AddResponse(FormResponse fr);
+
     }
 }
 

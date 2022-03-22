@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,6 +26,10 @@ namespace SignUpGenius
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<SignUpGeniusContext>(options =>
+            {
+                options.UseSqlite(Configuration["ConnectionStrings:ResponsesDBConnection"]);
+            });
 
             services.AddScoped<ISignUpGeniusRepository, EFSignUpGeniusRepository> ();
         }
@@ -54,6 +59,8 @@ namespace SignUpGenius
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }

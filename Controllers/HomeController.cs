@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace SignUpGenius.Controllers
 {
@@ -44,13 +45,18 @@ namespace SignUpGenius.Controllers
         [HttpPost]
         public IActionResult SignUp(FormResponse fr)
         {
-            return View("Index");
+            if (ModelState.IsValid)
+            {
+                repo.SaveResponse(fr);
+
+                return View("Confirmation", fr);
+            }
+            else
+            {
+                return View(fr);
+            }
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+
     }
 }

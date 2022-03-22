@@ -15,7 +15,18 @@ namespace SignUpGenius.Models
             context = temp;
         }
 
-
         public IQueryable<FormResponse> FormResponses => context.FormResponses;
+
+
+        public void SaveResponse(FormResponse response)
+        {
+            context.SaveChanges();
+        }
+
+        public void AddResponse(FormResponse fr)
+        {
+            context.Add(fr);
+            context.SaveChanges();
+        }
     }
 }
