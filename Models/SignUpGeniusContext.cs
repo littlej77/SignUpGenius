@@ -17,7 +17,7 @@ namespace SignUpGenius.Models
         }
 
         public DbSet<FormResponse> FormResponses { get; set; }
-
+        public DbSet<TimeSlot> TimeSlots { get; set; }
 
     }
 }

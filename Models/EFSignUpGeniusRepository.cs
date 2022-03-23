@@ -16,7 +16,7 @@ namespace SignUpGenius.Models
         }
 
         public IQueryable<FormResponse> FormResponses => context.FormResponses;
-
+        public IQueryable<TimeSlot> TimeSlots => context.TimeSlots;
 
         public void SaveResponse(FormResponse response)
         {

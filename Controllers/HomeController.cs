@@ -47,7 +47,7 @@ namespace SignUpGenius.Controllers
         [HttpGet]
         public IActionResult SignUp()
         {
-            ViewBag.TimeSlot = repo.TimeSlot.ToList();
+            ViewBag.TimeSlot = repo.TimeSlots.ToList();
             return View();
         }
 
@@ -70,7 +70,7 @@ namespace SignUpGenius.Controllers
         [HttpGet]
         public IActionResult Edit(int tourid)
         {
-            ViewBag.TimeSlot = repo.TimeSlot.ToList();
+            ViewBag.TimeSlot = repo.TimeSlots.ToList();
 
             var entry = repo.FormResponses.Single(x => x.TourId == tourid);
 

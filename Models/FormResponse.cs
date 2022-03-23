@@ -28,8 +28,9 @@ namespace SignUpGenius.Models
 
         public string Phone { get; set; }
 
-        public DateTime TourDate { get; set; }
+        public int TimeSlotID { get; set; }
         public TimeSlot TimeSlot { get; set; }
+
 
     }
 }

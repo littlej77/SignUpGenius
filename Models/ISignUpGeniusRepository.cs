@@ -8,6 +8,7 @@ namespace SignUpGenius.Models
     public interface ISignUpGeniusRepository
     {
         IQueryable<FormResponse> FormResponses { get; }
+        IQueryable<TimeSlot> TimeSlots { get; }
 
         public void SaveResponse(FormResponse fr);
 
