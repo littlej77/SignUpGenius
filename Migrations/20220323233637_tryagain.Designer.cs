@@ -8,8 +8,8 @@ using SignUpGenius.Models;
 namespace SignUpGenius.Migrations
 {
     [DbContext(typeof(SignUpGeniusContext))]
-    [Migration("20220323231344_another")]
-    partial class another
+    [Migration("20220323233637_tryagain")]
+    partial class tryagain
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

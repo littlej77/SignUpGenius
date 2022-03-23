@@ -34,7 +34,6 @@ namespace SignUpGenius.Controllers
         {
             var x = repo.FormResponses
                 .Include(x => x.TimeSlot)
-                .OrderBy(x => x.TimeSlot)
                 .ToList();
 
             return View(x);
@@ -43,11 +42,12 @@ namespace SignUpGenius.Controllers
 
         public IActionResult SelectTime()
         {
-            var t = repo.TimeSlots
-                .Where(t => t.Taken == false)
-                .OrderBy(t => t.TourTime);
+            var x = repo.TimeSlots
+                .Where(x => x.Taken == false)
+                .OrderBy(x => x.TourTime)
+                .ToList();
 
-            return View();
+            return View(x);
         }
 
 

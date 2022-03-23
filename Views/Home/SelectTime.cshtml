@@ -2,7 +2,7 @@
     ViewData["Title"] = "SelectTime";
 }
 
-@model SignUpGenius.Models.FormResponse
+@model List<TimeSlot>
 
 <header>
     <h1>Select a Date and Time to tour the Layton, Utah Temple</h1>
@@ -18,7 +18,28 @@
         <a asp-action="SignUp">here </a>to fill in a form with their information.
     </p>
 
+    <table class="table table-bordered table-striped">
+        <thead class="bold">
+            <tr>
+                <td>Monday</td>
+                <td>Tuesday</td>
+                <td>Wednesday</td>
+                <td>Thursday</td>
+                <td>Friday</td>
+                <td>Saturday</td>
+            </tr>
+        </thead>
 
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.TourTime</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
 
 </body>
 </html>
