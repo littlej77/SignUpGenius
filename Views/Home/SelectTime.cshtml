@@ -2,6 +2,8 @@
     ViewData["Title"] = "SelectTime";
 }
 
+@model SignUpGenius.Models.FormResponse
+
 <header>
     <h1>Select a Date and Time to tour the Layton, Utah Temple</h1>
 </header>
@@ -15,5 +17,18 @@
         once they select the time it will take them
         <a asp-action="SignUp">here </a>to fill in a form with their information.
     </p>
+
+    <form method="post">
+        <label asp-for="TimeSlot">Time:</label>
+        <select asp-for="TimeSlotID">
+            <option value="">Select a time</option>
+            @foreach (TimeSlot t in ViewBag.TimeSlot)
+            {
+                <option value="@t.TimeSlotID">@t.TourTime</option>
+            }
+        </select>
+    </form>
+
+
 </body>
 </html>

@@ -2,6 +2,7 @@
     ViewData["Title"] = "ViewApp";
 }
 
+@model List<FormResponse>
 
 <header>
     <h1>View Appointments </h1>
@@ -9,5 +10,36 @@
 <html>
 <body>
     <p>Use this page to show appointments </p>
+
+    <table>
+        <thead class="bold">
+            <tr>
+                <td>Tour Date/Time</td>
+                <td>Group Name</td>
+                <td>Group Size</td>
+                <td>Email</td>
+                <td>Phone</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var in Model)
+            {
+            <tr>
+                <td>@x.TimeSlot.TourTime</td>
+                <td>@x.GroupName</td>
+                <td>@x.GroupSize</td>
+                <td>@x.Email</td>
+                <td>@x.Phone</td>
+
+                <td><a asp-controller="Home" asp-action="Edit" asp-route-TourId="@x.TourId">Edit</a></td>
+                <td><a asp-controller="Home" asp-action="Delete" asp-route-TourId="@x.TourId">Delete</a></td>
+            </tr>
+            }
+        </tbody>
+
+    </table>
+
+
 </body>
 </html>

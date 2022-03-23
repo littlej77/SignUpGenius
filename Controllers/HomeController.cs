@@ -19,28 +19,38 @@ namespace SignUpGenius.Controllers
             repo = temp;
         }
 
+
         public IActionResult Index()
         {
             return View();
         }
 
+
         public IActionResult ViewApp()
         {
-            return View();
+            var entries = repo.FormResponses
+                .Include(x => x.TimeSlot)
+                .OrderBy(x => x.TimeSlot)
+                .ToList();
+
+            return View(entries);
         }
+
 
         public IActionResult SelectTime()
         {
             return View();
         }
 
+
         //i think here is where we will pass in the time.. SignUP(date, time)
         [HttpGet]
         public IActionResult SignUp()
         {
-
+            ViewBag.TimeSlot = repo.TimeSlot.ToList();
             return View();
         }
+
 
         [HttpPost]
         public IActionResult SignUp(FormResponse fr)
@@ -55,6 +65,42 @@ namespace SignUpGenius.Controllers
             {
                 return View(fr);
             }
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int tourid)
+        {
+            ViewBag.TimeSlot = repo.TimeSlot.ToList();
+
+            var entry = repo.FormResponses.Single(x => x.TourId == tourid);
+
+            return View("SignUp", entry);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(FormResponse fr)
+        {
+            repo.Update(fr);
+            repo.SaveChanges();
+
+            return RedirectToAction("ViewApp");
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int tourid)
+        {
+            var entry = repo.FormResponses.Single(x => x.TourId == tourid);
+
+            return View(entry);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(FormResponse fr)
+        {
+            repo.FormResponses.Remove(fr);
+            repo.SaveChanges();
+
+            return RedirectToAction("ViewApp");
         }
 
 
