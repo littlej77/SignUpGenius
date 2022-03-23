@@ -33,7 +33,7 @@ namespace SignUpGenius.Models
                 new TimeSlot { TimeSlotID = 2, TourTime = (2022, 4, 2, 17, 0) },
                 new TimeSlot { TimeSlotID = 2, TourTime = (2022, 4, 2, 18, 0) },
                 new TimeSlot { TimeSlotID = 2, TourTime = (2022, 4, 2, 19, 0) },
-                new TimeSlot { TimeSlotID = 2, TourTime = (2022, 4, 2, 20, 0) },
+                new TimeSlot { TimeSlotID = 2, TourTime = (2022, 4, 2, 20, 0) }
 
                 );
         }
