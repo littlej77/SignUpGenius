@@ -57,7 +57,8 @@ namespace SignUpGenius.Controllers
             ViewBag.TimeSlot = repo.TimeSlots.ToList();
             return View(new AppTimeViewModel
             {
-                timeSlot = 
+                timeSlot = "context.TimeSlots.Single( t => t.TimeSlotId = timeId)"
+                // this we can finish once we have the context file set up at the top of this page 
             }
                 );
         }
