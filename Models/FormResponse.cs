@@ -30,7 +30,5 @@ namespace SignUpGenius.Models
 
         public int TimeSlotID { get; set; }
         public TimeSlot TimeSlot { get; set; }
-
-
     }
 }

@@ -10,5 +10,8 @@ namespace SignUpGenius.Models
         public int TimeSlotID { get; set; }
 
         public DateTime TourTime { get; set; }
+
+        public Boolean Taken { get; set; }
+
     }
 }

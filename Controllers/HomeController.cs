@@ -39,6 +39,10 @@ namespace SignUpGenius.Controllers
 
         public IActionResult SelectTime()
         {
+            var t = repo.TimeSlots
+                .Where(t => t.Taken == false)
+                .OrderBy(t => t.TourTime);
+
             return View();
         }
 
@@ -80,8 +84,7 @@ namespace SignUpGenius.Controllers
         [HttpPost]
         public IActionResult Edit(FormResponse fr)
         {
-            repo.Update(fr);
-            repo.SaveChanges();
+            repo.SaveResponse(fr);
 
             return RedirectToAction("ViewApp");
         }
@@ -97,8 +100,7 @@ namespace SignUpGenius.Controllers
         [HttpPost]
         public IActionResult Delete(FormResponse fr)
         {
-            repo.FormResponses.Remove(fr);
-            repo.SaveChanges();
+            repo.DeleteResponse(fr);
 
             return RedirectToAction("ViewApp");
         }

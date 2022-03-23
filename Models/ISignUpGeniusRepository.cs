@@ -14,6 +14,8 @@ namespace SignUpGenius.Models
 
         public void AddResponse(FormResponse fr);
 
+        public void DeleteResponse(FormResponse fr);
+
     }
 }
 
