@@ -44,7 +44,6 @@ namespace SignUpGenius.Controllers
         {
             var x = repo.TimeSlots
                 .Where(x => x.Taken == false)
-                .OrderBy(x => x.TourTime)
                 .ToList();
 
             return View(x);
