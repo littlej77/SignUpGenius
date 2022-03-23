@@ -23,18 +23,18 @@ namespace SignUpGenius.Models
         protected override void OnModelCreating(ModelBuilder mb)
         {
             mb.Entity<TimeSlot>().HasData(
-                new TimeSlot { TimeSlotID = 1, TourTime = (2022, 4, 2, 8, 0) },
-                new TimeSlot { TimeSlotID = 2, TourTime = (2022, 4, 2, 10, 0)},
-                new TimeSlot { TimeSlotID = 2, TourTime = (2022, 4, 2, 11, 0) },
-                new TimeSlot { TimeSlotID = 2, TourTime = (2022, 4, 2, 12, 0) },
-                new TimeSlot { TimeSlotID = 2, TourTime = (2022, 4, 2, 13, 0) },
-                new TimeSlot { TimeSlotID = 2, TourTime = (2022, 4, 2, 14, 0) },
-                new TimeSlot { TimeSlotID = 2, TourTime = (2022, 4, 2, 15, 0) },
-                new TimeSlot { TimeSlotID = 2, TourTime = (2022, 4, 2, 16, 0) },
-                new TimeSlot { TimeSlotID = 2, TourTime = (2022, 4, 2, 17, 0) },
-                new TimeSlot { TimeSlotID = 2, TourTime = (2022, 4, 2, 18, 0) },
-                new TimeSlot { TimeSlotID = 2, TourTime = (2022, 4, 2, 19, 0) },
-                new TimeSlot { TimeSlotID = 2, TourTime = (2022, 4, 2, 20, 0) },
+                new TimeSlot { TimeSlotID = 1, TourTime = Convert.ToDateTime(8) },
+                new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(9) },
+                new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(10) },
+                new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(11) },
+                new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(12) },
+                new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(13) },
+                new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(14) },
+                new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(15) },
+                new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(16) },
+                new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(17) },
+                new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(18) },
+                new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(19) }
 
                 );
         }
