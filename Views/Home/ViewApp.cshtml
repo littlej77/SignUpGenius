@@ -11,7 +11,7 @@
 <body>
     <p>Use this page to show appointments </p>
 
-    <table>
+    <table class="table table-sm table-striped table-bordered">
         <thead class="bold">
             <tr>
                 <td>Tour Date/Time</td>
@@ -25,16 +25,16 @@
         <tbody>
             @foreach (FormResponse fr in Model)
             {
-            <tr>
-                <td>@fr.TimeSlot.TourTime</td>
-                <td>@fr.GroupName</td>
-                <td>@fr.GroupSize</td>
-                <td>@fr.Email</td>
-                <td>@fr.Phone</td>
+                <tr>
+                    <td>@fr.TimeSlot.TourTime</td>
+                    <td>@fr.GroupName</td>
+                    <td>@fr.GroupSize</td>
+                    <td>@fr.Email</td>
+                    <td>@fr.Phone</td>
 
-                <td><a asp-controller="Home" asp-action="Edit" asp-route-TourId="@fr.TourId">Edit</a></td>
-                <td><a asp-controller="Home" asp-action="Delete" asp-route-TourId="@fr.TourId">Delete</a></td>
-            </tr>
+                    <td><a asp-controller="Home" class="btn btn-info btn-sm" asp-action="Edit" asp-route-TourId="@fr.TourId">Edit</a></td>
+                    <td><a asp-controller="Home" class="btn btn-info btn-sm" asp-action="Delete" asp-route-TourId="@fr.TourId">Delete</a></td>
+                </tr>
             }
         </tbody>
 
