@@ -28,12 +28,12 @@ namespace SignUpGenius.Controllers
 
         public IActionResult ViewApp()
         {
-            var entries = repo.FormResponses
+            var x = repo.FormResponses
                 .Include(x => x.TimeSlot)
                 .OrderBy(x => x.TimeSlot)
                 .ToList();
 
-            return View(entries);
+            return View(x);
         }
 
 

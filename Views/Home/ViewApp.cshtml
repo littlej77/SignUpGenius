@@ -23,14 +23,14 @@
         </thead>
 
         <tbody>
-            @foreach (var in Model)
+            @foreach (FormResponse fr in Model)
             {
             <tr>
-                <td>@x.TimeSlot.TourTime</td>
-                <td>@x.GroupName</td>
-                <td>@x.GroupSize</td>
-                <td>@x.Email</td>
-                <td>@x.Phone</td>
+                <td>@fr.TimeSlot.TourTime</td>
+                <td>@fr.GroupName</td>
+                <td>@fr.GroupSize</td>
+                <td>@fr.Email</td>
+                <td>@fr.Phone</td>
 
                 <td><a asp-controller="Home" asp-action="Edit" asp-route-TourId="@x.TourId">Edit</a></td>
                 <td><a asp-controller="Home" asp-action="Delete" asp-route-TourId="@x.TourId">Delete</a></td>
