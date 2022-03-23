@@ -7,12 +7,15 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using SignUpGenius.Models.ViewModels;
 
 namespace SignUpGenius.Controllers
 {
     public class HomeController : Controller
     {
         private ISignUpGeniusRepository repo;
+        //dbcontext 
+        //run database. 
 
         public HomeController(ISignUpGeniusRepository temp)
         {
@@ -47,12 +50,16 @@ namespace SignUpGenius.Controllers
         }
 
 
-        //i think here is where we will pass in the time.. SignUP(date, time)
+        //i think here is where we will pass in the time.. SignUP(time)
         [HttpGet]
-        public IActionResult SignUp()
+        public IActionResult SignUp( int TimeId)
         {
             ViewBag.TimeSlot = repo.TimeSlots.ToList();
-            return View();
+            return View(new AppTimeViewModel
+            {
+                timeSlot = 
+            }
+                );
         }
 
 
