@@ -15,6 +15,7 @@ namespace SignUpGenius.Controllers
     {
         private ISignUpGeniusRepository repo;
         //dbcontext 
+        private SignUpGeniusContext context { get; set; }
         //run database. 
 
         public HomeController(ISignUpGeniusRepository temp)
@@ -57,7 +58,7 @@ namespace SignUpGenius.Controllers
             ViewBag.TimeSlot = repo.TimeSlots.ToList();
             return View(new AppTimeViewModel
             {
-                timeSlot = "context.TimeSlots.Single( t => t.TimeSlotId = timeId)"
+                timeSlot = context.TimeSlots.Single( t => t.TimeSlotId = TimeId)
                 // this we can finish once we have the context file set up at the top of this page 
             }
                 );
