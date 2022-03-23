@@ -19,19 +19,6 @@
     </p>
 
 
-    <form method="post">
-        <label asp-for="TimeSlot">Time:</label>
-        <select asp-for="TimeSlotID">
-            <option value="">Select a time</option>
-            @foreach (TimeSlot t in ViewBag.TimeSlot)
-            {
-                <option value="@t.TimeSlotID">@t.TourTime</option>
-                <input type="hidden" name="TimeId" value="@t.TimeSlotID"/>
-                //this might give an error? 
-            }
-        </select>
-    </form>
-
 
 </body>
 </html>

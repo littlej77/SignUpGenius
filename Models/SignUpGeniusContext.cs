@@ -20,24 +20,34 @@ namespace SignUpGenius.Models
         public DbSet<FormResponse> FormResponses { get; set; }
         public DbSet<TimeSlot> TimeSlots { get; set; }
 
-        //protected override void OnModelCreating(ModelBuilder mb)
-        //{
-        //    mb.Entity<TimeSlot>().HasData(
-        //        new TimeSlot { TimeSlotID = 1, TourTime = Convert.ToDateTime(8) },
-        //        new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(9) },
-        //        new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(10) },
-        //        new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(11) },
-        //        new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(12) },
-        //        new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(13) },
-        //        new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(14) },
-        //        new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(15) },
-        //        new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(16) },
-        //        new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(17) },
-        //        new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(18) },
-        //        new TimeSlot { TimeSlotID = 2, TourTime = Convert.ToDateTime(19) }
-
-        //        );
-        //}
+        protected override void OnModelCreating(ModelBuilder mb)
+        {
+            mb.Entity<TimeSlot>().HasData(
+                new TimeSlot { TimeSlotID = 1, TourTime = "8AM", Taken = false },
+                new TimeSlot { TimeSlotID = 2, TourTime = "9AM", Taken = false },
+                new TimeSlot { TimeSlotID = 3, TourTime = "10AM", Taken = false },
+                new TimeSlot { TimeSlotID = 4, TourTime = "11AM", Taken = false },
+                new TimeSlot { TimeSlotID = 5, TourTime = "12PM", Taken = false },
+                new TimeSlot { TimeSlotID = 6, TourTime = "1PM", Taken = false },
+                new TimeSlot { TimeSlotID = 7, TourTime = "2PM", Taken = false },
+                new TimeSlot { TimeSlotID = 8, TourTime = "4PM", Taken = false },
+                new TimeSlot { TimeSlotID = 9, TourTime = "5PM", Taken = false },
+                new TimeSlot { TimeSlotID = 10, TourTime = "6PM", Taken = false },
+                new TimeSlot { TimeSlotID = 11, TourTime = "7PM", Taken = false },
+                new TimeSlot { TimeSlotID = 12, TourTime = "8PM", Taken = false }
+                );
+            mb.Entity<FormResponse>().HasData(
+                new FormResponse
+                {
+                    TourId =1,
+                    TimeSlotID = 1,
+                    GroupName = "Kylie",
+                    GroupSize = 5,
+                    Email = "kyliefromm@gmail.com",
+                    Phone = "801-555-5555",
+                }
+            );
+        }
 
     }
 }

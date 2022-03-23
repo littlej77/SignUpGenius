@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace SignUpGenius.Models
 {
@@ -9,7 +10,7 @@ namespace SignUpGenius.Models
         [Required]
         public int TimeSlotID { get; set; }
 
-        public DateTime TourTime { get; set; }
+        public string TourTime { get; set; }
 
         public Boolean Taken { get; set; }
 
