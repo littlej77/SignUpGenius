@@ -14,11 +14,13 @@
     <table class="table table-sm table-striped table-bordered">
         <thead class="bold">
             <tr>
-                <td>Tour Date/Time</td>
-                <td>Group Name</td>
-                <td>Group Size</td>
-                <td>Email</td>
-                <td>Phone</td>
+                <th class="text-center" style="width: 14%">Tour Date/Time</th>
+                <th class="text-center" style="width: 14%">Group Name</th>
+                <th class="text-center" style="width: 14%">Group Size</th>
+                <th class="text-center" style="width: 25%">Email</th>
+                <th class="text-center" style="width: 19%">Phone</th>
+                <th class="text-center" style="width: 7%">Edit</th>
+                <th class="text-center" style="width: 7%">Delete</th>
             </tr>
         </thead>
 
@@ -26,14 +28,13 @@
             @foreach (FormResponse fr in Model)
             {
                 <tr>
-                    <td>@fr.TimeSlot.TourTime</td>
-                    <td>@fr.GroupName</td>
-                    <td>@fr.GroupSize</td>
-                    <td>@fr.Email</td>
-                    <td>@fr.Phone</td>
-
-                    <td><a asp-controller="Home" class="btn btn-info btn-sm" asp-action="Edit" asp-route-TourId="@fr.TourId">Edit</a></td>
-                    <td><a asp-controller="Home" class="btn btn-info btn-sm" asp-action="Delete" asp-route-TourId="@fr.TourId">Delete</a></td>
+                    <td class="text-center">@fr.TimeSlot.TourTime</td>
+                    <td class="text-center">@fr.GroupName</td>
+                    <td class="text-center">@fr.GroupSize</td>
+                    <td class="text-center">@fr.Email</td>
+                    <td class="text-center">@fr.Phone</td>
+                    <td class="text-center"><a asp-controller="Home" class="btn btn-info btn-sm d-flex justify-content-center" asp-action="Edit" asp-route-TourId="@fr.TourId">🔨</a></td>
+                    <td class="text-center"><a asp-controller="Home" class="btn btn-info btn-sm d-flex justify-content-center" asp-action="Delete" asp-route-TourId="@fr.TourId">🗑️</a></td>
                 </tr>
             }
         </tbody>
