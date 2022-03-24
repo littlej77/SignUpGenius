@@ -12,6 +12,8 @@ namespace SignUpGenius.Models
 
         public string TourTime { get; set; }
 
+        //public string DayOfWeekSlot { get; set; }
+
         public Boolean Taken { get; set; }
 
     }

@@ -20,6 +20,8 @@ namespace SignUpGenius.Models
         public DbSet<FormResponse> FormResponses { get; set; }
         public DbSet<TimeSlot> TimeSlots { get; set; }
 
+        //public DbSet<TimeSlot> DayOfWeekSlot { get; set; }
+
         protected override void OnModelCreating(ModelBuilder mb)
         {
             mb.Entity<TimeSlot>().HasData(
@@ -36,6 +38,18 @@ namespace SignUpGenius.Models
                 new TimeSlot { TimeSlotID = 11, TourTime = "7PM", Taken = false },
                 new TimeSlot { TimeSlotID = 12, TourTime = "8PM", Taken = false }
                 );
+
+            // I Think we need another field for day of the week
+
+            //mb.Entity<DayOfWeekSlot>().HasData(
+            //    new DayOfWeekSlot { DayOfWeekSlotID = 1, DayOfWeek = "MON"},
+            //    new DayOfWeekSlot { DayOfWeekSlotID = 2, DayOfWeek = "TUE"},
+            //    new DayOfWeekSlot { DayOfWeekSlotID = 3, DayOfWeek = "WED"},
+            //    new DayOfWeekSlot { DayOfWeekSlotID = 4, DayOfWeek = "THU"},
+            //    new DayOfWeekSlot { DayOfWeekSlotID = 5, DayOfWeek = "FRI"},
+            //    new DayOfWeekSlot { DayOfWeekSlotID = 6, DayOfWeek = "SAT"}
+            //    );
+
             mb.Entity<FormResponse>().HasData(
                 new FormResponse
                 {

@@ -78,7 +78,7 @@ namespace SignUpGenius.Controllers
             if (ModelState.IsValid)
             {
                 repo.AddResponse(fr);
-
+                
                 return View("Confirmation", fr);
             }
             else
