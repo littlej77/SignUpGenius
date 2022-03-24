@@ -77,7 +77,7 @@ namespace SignUpGenius.Controllers
         {
             if (ModelState.IsValid)
             {
-                repo.SaveResponse(fr);
+                repo.AddResponse(fr);
 
                 return View("Confirmation", fr);
             }
@@ -90,11 +90,19 @@ namespace SignUpGenius.Controllers
         [HttpGet]
         public IActionResult Edit(int tourid)
         {
-            ViewBag.TimeSlot = repo.TimeSlots.ToList();
+
+            //var timeSlot = repo.TimeSlots
+            //    .Single(x => x.TimeSlotID == timeid);
 
             var entry = repo.FormResponses.Single(x => x.TourId == tourid);
 
             return View("SignUp", entry);
+
+            //ViewBag.TimeSlot = repo.TimeSlots.ToList();
+
+            //var entry = repo.FormResponses.Single(x => x.TourId == tourid);
+
+            //return View("SignUp", entry);
         }
 
         [HttpPost]

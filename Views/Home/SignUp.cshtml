@@ -27,9 +27,7 @@
         <input asp-for="Phone" />
         <br />
 
-        <label asp-for="Phone">Phone Number:</label>
-        <input type="hidden" asp-for="Phone" />
-        <br />
+        <input type="hidden" asp-for="@Model.TimeSlotID" />
 
         <div class="float-end">
             <input class="btn btn-primary" type="submit" value="Submit Reservation" />
