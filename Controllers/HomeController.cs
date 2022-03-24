@@ -52,15 +52,23 @@ namespace SignUpGenius.Controllers
 
         //i think here is where we will pass in the time.. SignUP(time)
         [HttpGet]
-        public IActionResult SignUp( int TimeId)
+        public IActionResult SignUp(int timeid)
         {
-            ViewBag.TimeSlot = repo.TimeSlots.ToList();
-            return View(new AppTimeViewModel
-            {
-                timeSlot = context.TimeSlots.Single( t => t.TimeSlotID == TimeId)
-                // this we can finish once we have the context file set up at the top of this page 
-            }
-                );
+            //ViewBag.TimeSlot = repo.TimeSlots.ToList();
+            //var timeSlot = context.TimeSlots.Single(x => x.TimeSlotID == timeid);
+
+            var timeSlot = repo.TimeSlots
+                .Single(x => x.TimeSlotID == timeid);
+
+            return View("SignUp");
+
+            //ViewBag.TimeSlot = repo.TimeSlots.ToList();
+            //return View(new AppTimeViewModel
+            //{
+            //    timeSlot = context.TimeSlots.Single(x => x.TimeSlotID == timeid)
+            //    // this we can finish once we have the context file set up at the top of this page 
+            //}
+            //    );
         }
 
 

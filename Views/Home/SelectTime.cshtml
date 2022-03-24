@@ -34,12 +34,13 @@
             @foreach (var x in Model)
             {
             <tr>
-                <td>@x.TourTime</td>
-                <td>@x.TourTime</td>
-                <td>@x.TourTime</td>
-                <td>@x.TourTime</td>
-                <td>@x.TourTime</td>
-                <td>@x.TourTime</td>
+                <td><a asp-controller="Home" asp-action="SignUp" asp-route-timeid="@x.TimeSlotID">@x.TourTime</a></td>
+                <td><a asp-controller="Home" asp-action="SignUp" asp-route-timeid="@x.TimeSlotID">@x.TourTime</a></td>
+                <td><a asp-controller="Home" asp-action="SignUp" asp-route-timeid="@x.TimeSlotID">@x.TourTime</a></td>
+                <td><a asp-controller="Home" asp-action="SignUp" asp-route-timeid="@x.TimeSlotID">@x.TourTime</a></td>
+                <td><a asp-controller="Home" asp-action="SignUp" asp-route-timeid="@x.TimeSlotID">@x.TourTime</a></td>
+                <td><a asp-controller="Home" asp-action="SignUp" asp-route-timeid="@x.TimeSlotID">@x.TourTime</a></td>
+
             </tr>
             }
         </tbody>
