@@ -29,6 +29,11 @@ namespace SignUpGenius.Models
             context.SaveChanges();
         }
 
+       public void EditResponse(FormResponse fr)
+        {
+            context.Update(fr);
+            context.SaveChanges();
+        }
         public void DeleteResponse(FormResponse fr)
         {
             context.Remove(fr);

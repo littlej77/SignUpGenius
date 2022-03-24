@@ -7,7 +7,7 @@
 <h1> Sign your group up for a tour of the Layton, Utah Temple</h1>
 
 <div>
-    <form method="post" asp-controller="Home" asp-action="SignUp">
+    <form method="post">
 
         <div asp-validation-summary="All" class="text-danger"></div>
 
@@ -28,6 +28,7 @@
         <br />
 
         <input type="hidden" asp-for="@Model.TimeSlotID" />
+        <input type="hidden" asp-for="@Model.TourId"/>
 
         <div class="float-end">
             <input class="btn btn-primary" type="submit" value="Submit Reservation" />

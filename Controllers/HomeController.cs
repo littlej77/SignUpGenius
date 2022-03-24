@@ -60,7 +60,11 @@ namespace SignUpGenius.Controllers
             var timeSlot = repo.TimeSlots
                 .Single(x => x.TimeSlotID == timeid);
 
-            return View("SignUp");
+            var form = new FormResponse();
+            form.TimeSlot = timeSlot;
+            form.TimeSlotID = timeid;
+
+            return View("SignUp", form);
 
             //ViewBag.TimeSlot = repo.TimeSlots.ToList();
             //return View(new AppTimeViewModel
@@ -77,6 +81,7 @@ namespace SignUpGenius.Controllers
         {
             if (ModelState.IsValid)
             {
+                //fr.TimeSlot.Taken = true;
                 repo.AddResponse(fr);
 
                 return View("Confirmation", fr);
@@ -94,6 +99,7 @@ namespace SignUpGenius.Controllers
             //var timeSlot = repo.TimeSlots
             //    .Single(x => x.TimeSlotID == timeid);
 
+
             var entry = repo.FormResponses.Single(x => x.TourId == tourid);
 
             return View("SignUp", entry);
@@ -108,20 +114,20 @@ namespace SignUpGenius.Controllers
         [HttpPost]
         public IActionResult Edit(FormResponse fr)
         {
-            repo.SaveResponse(fr);
+            repo.EditResponse(fr);
 
             return RedirectToAction("ViewApp");
         }
 
-        [HttpGet]
-        public IActionResult Delete(int tourid)
-        {
-            var entry = repo.FormResponses.Single(x => x.TourId == tourid);
+        //[HttpGet]
+        //public IActionResult Delete(int tourid)
+        //{
+        //    var entry = repo.FormResponses.Single(x => x.TourId == tourid);
 
-            return View(entry);
-        }
+        //    return View(entry);
+        //}
 
-        [HttpPost]
+        //[HttpPost]
         public IActionResult Delete(FormResponse fr)
         {
             repo.DeleteResponse(fr);

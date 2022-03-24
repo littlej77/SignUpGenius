@@ -7,7 +7,7 @@ namespace SignUpGenius.Models
     public class TimeSlot
     {
         [Key]
-        [Required]
+        [Required(ErrorMessage = "TimeslotID on new one")]
         public int TimeSlotID { get; set; }
 
         public string TourTime { get; set; }

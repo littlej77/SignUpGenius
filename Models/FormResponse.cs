@@ -13,17 +13,17 @@ namespace SignUpGenius.Models
 
         //not sure if we need this?
         [Key]
-        [Required]
+        [Required(ErrorMessage = "TourID")]
         public int TourId { get; set; }
      
-        [Required]
+        [Required(ErrorMessage = "group name")]
         public string GroupName {get; set;}
 
         [Required]
         [Range(1, 15, ErrorMessage = "Groups can be no larger than 15 people")]
         public int GroupSize { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "email")]
         public string Email { get; set; }
 
         public string Phone { get; set; }
